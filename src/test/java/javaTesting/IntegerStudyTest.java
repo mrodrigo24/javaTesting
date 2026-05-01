@@ -36,7 +36,6 @@ public class IntegerStudyTest {
         assertEquals(tipusPersonas,13, tretze.intValue());
         // assertEquals("El nombre cint val realmen 20"),20,vint.intValue());
     }
-
     }
 
 
