@@ -1,4 +1,4 @@
-package javaTesting
+package javaTesting;
 import org.junit.Test;
 
 public class IntegerStudy {
