@@ -2,7 +2,6 @@ package javaTesting;
 import org.junit.Test;
 
 public class IntegerStudyTest {
-
         @Test
         public void IntegerStudy(){}
         Integer vuit =new Integer(8);
