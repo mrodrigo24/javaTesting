@@ -26,7 +26,4 @@ public class AppParametersTest {
         AppParameters inst2=AppParameters.getInstance();
         Assert.assertTrue("Comprovacion unicitat instancia del singleton", (inst1==inst2));
     }
-
-
-
 }
