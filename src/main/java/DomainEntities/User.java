@@ -1,9 +1,10 @@
 package DomainEntities;
 
-import javaTesting.Resources.PasswordUtils;
+import JavaTesting.Resources.PasswordUtils;
+
 public class User {
-    public String name;
-    public String password;
+    private String name;
+    private String password;
     private String salt;//von canviant a cada usuari
     //password ==hash!password real + salt
     public User() {
@@ -11,19 +12,22 @@ public class User {
     }
     public User(String name, String password){
         this.name=name;
-        this.password=password;
-    }
-    public void setName(String name, String password){
-        this.name=name;
-        this.salt=PasswordUtils.
-    }
-    public void setPassword(String password){
-        this.password=password;
+        this.salt=PasswordUtils.genSalt();
+        this.password=PasswordUtils.hashedPassword(password,this.salt);
     }
     public String getName(){
         return name;
     }
-    public String getPassword(){
-        return password;
+    public void setName(){
+        this.name=name;
     }
+
+    public boolean verifyPassword(String passwordEntered){
+        return PasswordUtils.verifiUserPassword(passwordEntered,salt,password );
+    }
+
+    public void setPassword(String password){
+        this.password=PasswordUtils.hashedPassword(password,salt);
+    }
+
 }
